@@ -1,0 +1,23 @@
+{
+  "new": {
+    "types": ["js", "node", "react", "python"],
+    "flags": ["git", "install", "eslint", "prettier", "venv"]
+  },
+  "view":{
+  	"description":"exemple: fxcode view index.html"
+  },
+    "git": {
+      "commands": [
+        "init",
+        "status",
+        "add",
+        "commit",
+        "log",
+        "push",
+        "pull"
+        ]
+    },
+  "find":{
+    "termo":"exemple: fxcode find arquivo.txt xadrez"
+  }
+}
