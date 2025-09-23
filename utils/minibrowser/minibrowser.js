@@ -16,6 +16,8 @@ import {
   ctrlTeclaSair
  } from "../createTela.js";
 
+import {servidor} from "./miniServidor.js";
+
 import {cor} from '../colors.js';
 
 ctrlTeclaSair()
@@ -76,7 +78,8 @@ console.log("use ctrl-c para sair");
 }
 
 export {
-	miniBrowser
+	miniBrowser,
+	servidor
 }
 
 // ====== Inicia app ======

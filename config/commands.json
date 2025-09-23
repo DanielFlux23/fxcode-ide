@@ -1,6 +1,6 @@
 {
   "new": {
-    "types": ["js", "node", "react", "python"],
+    "types": ["js", "node", "node-express", "python"],
     "flags": ["git", "install", "eslint", "prettier", "venv"]
   },
   "view":{

@@ -1,7 +1,7 @@
 import path from "path";
 import { copiarTemplate, criarArquivo } from "../utils/fs.js";
 import logger from "../utils/logger.js";
-import  {miniBrowser} from "../utils/minibrowser/minibrowser.js";
+import  {miniBrowser,servidor} from "../utils/minibrowser/minibrowser.js";
 import { exec } from "child_process";
 import config from "../config/commands.json" with { type: "json" };
 
@@ -30,7 +30,12 @@ if (tipo === "-open") {
       exec(`open ${pathHtml}`);
       break;    
     case "android":
-      exec(`am start -a android.intent.action.VIEW -d "file://${pathHtml}"`, (err, stdout, stderr) => {
+
+    const caminhoAbsoluto = path.resolve(pathHtml)
+    const PORT = 3000
+    servidor(PORT,caminhoAbsoluto)
+      exec(`am start -a android.intent.action.VIEW -d "http://localhost:${PORT}" -t "text/html"`, (err, stdout, stderr) => {
+
           if (err) {
             console.error("Erro ao tentar abrir o HTML:", err);
           } else {
